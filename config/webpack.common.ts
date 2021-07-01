@@ -1,6 +1,7 @@
 import { Configuration, DefinePlugin } from 'webpack'
-// import ESLintPlugin from 'eslint-webpack-plugin'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
+
 import path from 'path'
 
 const config: Configuration = {
@@ -23,9 +24,12 @@ const config: Configuration = {
     plugins: [new TsconfigPathsPlugin({ configFile: 'tsconfig.json' })]
   },
   plugins: [
-    // new ESLintPlugin({
-    //   extensions: ['js', 'jsx', 'ts', 'tsx']
-    // })
+    new ForkTsCheckerWebpackPlugin({
+      // Speeds up TypeScript type checking and ESLint linting (by moving each to a separate process)
+      eslint: {
+        files: './src/**/*.{ts,tsx,js,jsx}'
+      }
+    })
   ]
 }
 
