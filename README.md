@@ -1,6 +1,6 @@
 # react-typescript-webpack
 
-Webpack boilerplate for a React TypeScript.
+Webpack boilerplate for a React TypeScript. Dependencies below.
 
 ## react
 
@@ -27,13 +27,13 @@ yarn add -D tsconfig-paths-webpack-plugin fork-ts-checker-webpack-plugin clean-w
 yarn add -D html-loader file-loader
 ```
 
-## scss & css
+## scss/css
 
 ```
 yarn add -D node-sass style-loader css-loader sass-loader
 ```
 
-## linter & formatter
+## eslint/prettier
 
 ```
 yarn add -D eslint eslint-config-prettier eslint-plugin-prettier prettier eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks  @typescript-eslint/eslint-plugin @typescript-eslint/parser
