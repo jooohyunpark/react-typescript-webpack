@@ -1,45 +1,31 @@
+import { Configuration, DefinePlugin } from 'webpack'
+// import ESLintPlugin from 'eslint-webpack-plugin'
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import path from 'path'
-import webpack from 'webpack'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
-import ESLintPlugin from 'eslint-webpack-plugin'
 
-const config: webpack.Configuration = {
-  output: {
-    publicPath: '/'
-  },
-  entry: './src/index.tsx',
+const config: Configuration = {
   module: {
     rules: [
       {
-        test: /\.(ts|js)x?$/i,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript']
-          }
-        }
+        use: ['babel-loader']
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: ['ts-loader']
       }
     ]
   },
   resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src')
-    },
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js'],
+    plugins: [new TsconfigPathsPlugin({ configFile: 'tsconfig.json' })]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: 'src/index.html'
-    }),
-    new webpack.HotModuleReplacementPlugin(),
-    new ForkTsCheckerWebpackPlugin({
-      async: false
-    }),
-    new ESLintPlugin({
-      extensions: ['js', 'jsx', 'ts', 'tsx']
-    })
+    // new ESLintPlugin({
+    //   extensions: ['js', 'jsx', 'ts', 'tsx']
+    // })
   ]
 }
 
