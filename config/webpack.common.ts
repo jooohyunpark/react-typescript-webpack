@@ -2,11 +2,13 @@ import { Configuration, DefinePlugin } from 'webpack'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 
-import path from 'path'
-
 const config: Configuration = {
   module: {
     rules: [
+      {
+        test: /\.html$/,
+        use: ['html-loader']
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,

@@ -1,13 +1,8 @@
-import {
-  Configuration as WebpackConfiguration,
-  DefinePlugin,
-  HotModuleReplacementPlugin
-} from 'webpack'
+import { Configuration as WebpackConfiguration, HotModuleReplacementPlugin } from 'webpack'
 import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import commonConfig from './webpack.common'
 import path from 'path'
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 
 interface Configuration extends WebpackConfiguration {
   devServer?: WebpackDevServerConfiguration
@@ -34,14 +29,16 @@ const config: Configuration = {
       template: 'src/index.html',
       chunks: ['index']
     }),
-    new HotModuleReplacementPlugin(),
-    new ForkTsCheckerWebpackPlugin({
-      // Speeds up TypeScript type checking and ESLint linting (by moving each to a separate process)
-      eslint: {
-        files: './src/**/*.{ts,tsx,js,jsx}'
+    new HotModuleReplacementPlugin()
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.s[ac]ss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
-    })
-  ]
+    ]
+  }
 }
 
 export default config

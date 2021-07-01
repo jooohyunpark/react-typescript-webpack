@@ -3,6 +3,7 @@ import { Configuration } from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import commonConfig from './webpack.common'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 const config: Configuration = {
   ...commonConfig,
@@ -16,6 +17,10 @@ const config: Configuration = {
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'assets/css/awa/[name].css',
+      chunkFilename: '[id].css'
     }),
     new CleanWebpackPlugin()
   ]

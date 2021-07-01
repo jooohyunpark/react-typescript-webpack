@@ -1,6 +1,7 @@
 {
   "name": "react-typescript-webpack",
   "version": "0.0.1",
+  "author": "Joohyun Park",
   "scripts": {
     "dev": "webpack serve --config config/webpack.dev.ts",
     "build": "webpack --config config/webpack.prod.ts",
@@ -29,6 +30,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "fork-ts-checker-webpack-plugin": "^6.2.12",
     "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.0.0",
     "node-sass": "^6.0.1",
     "prettier": "^2.3.2",
     "sass-loader": "^12.1.0",
