@@ -5,6 +5,7 @@ import commonConfig from './webpack.common'
 import path from 'path'
 import merge from 'webpack-merge'
 
+// webpack-dev-server type compatibility issue
 interface Configuration extends WebpackConfiguration {
   devServer?: WebpackDevServerConfiguration
 }
