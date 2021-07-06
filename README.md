@@ -24,7 +24,7 @@ yarn add -D tsconfig-paths-webpack-plugin fork-ts-checker-webpack-plugin clean-w
 ## loaders
 
 ```
-yarn add -D html-loader file-loader
+yarn add -D html-loader file-loader babel-loader
 ```
 
 ## scss/css
