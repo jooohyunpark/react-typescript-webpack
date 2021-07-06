@@ -18,7 +18,7 @@ yarn add -D webpack webpack-cli webpack-dev-server ts-node ts-loader @types/node
 ## plugins
 
 ```
-yarn add -D tsconfig-paths-webpack-plugin fork-ts-checker-webpack-plugin clean-webpack-plugin html-webpack-plugin mini-css-extract-plugin
+yarn add -D tsconfig-paths-webpack-plugin fork-ts-checker-webpack-plugin clean-webpack-plugin html-webpack-plugin mini-css-extract-plugin typescript-plugin-css-modules
 ```
 
 ## loaders
