@@ -30,15 +30,15 @@ const config: Configuration = {
       chunks: ['index']
     }),
     new HotModuleReplacementPlugin()
-  ],
-  module: {
-    rules: [
-      {
-        test: /\.s[ac]ss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
-      }
-    ]
-  }
+  ]
+  // module: {
+  //   rules: [
+  //     {
+  //       test: /\.s[ac]ss$/,
+  //       use: ['style-loader', 'css-loader', 'sass-loader']
+  //     }
+  //   ]
+  // }
 }
 
 export default config
