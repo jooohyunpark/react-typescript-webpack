@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import styles from './index.module.scss'
 
 interface Props {
@@ -6,7 +6,8 @@ interface Props {
   children?: ReactNode
 }
 
-const Button: FunctionComponent = ({ onClick, children }: Props) => {
+// const Button: FunctionComponent<Props> = ({ onClick, children }) => {
+const Button = ({ onClick, children }: Props) => {
   return (
     <button className={styles.button} onClick={onClick}>
       {children}

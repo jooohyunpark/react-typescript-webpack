@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import '@/styles/main.scss'
 import Button from '@/components/Button'
+import Link from '@/components/Link'
 
 const App: FunctionComponent = () => {
   return (
@@ -13,6 +14,8 @@ const App: FunctionComponent = () => {
         }}>
         test
       </Button>
+
+      <Link text="test" />
     </div>
   )
 }
