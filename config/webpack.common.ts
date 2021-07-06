@@ -29,7 +29,7 @@ const config: Configuration = {
     new ForkTsCheckerWebpackPlugin({
       // Speeds up TypeScript type checking and ESLint linting (by moving each to a separate process)
       eslint: {
-        files: './src/**/*.{ts,tsx,js,jsx}'
+        files: 'src/**/*.{ts,tsx,js,jsx}'
       }
     })
   ]
