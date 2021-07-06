@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react'
+import '@/styles/main.scss'
 import Button from '@/components/Button'
 
 const App: FunctionComponent = () => {
