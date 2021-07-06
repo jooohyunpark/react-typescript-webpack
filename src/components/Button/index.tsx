@@ -1,8 +1,17 @@
-import React, { FunctionComponent } from 'react'
-import './index.scss'
+import React, { FunctionComponent, ReactNode } from 'react'
+import styles from './index.module.scss'
 
-const Button: FunctionComponent = ({}) => {
-  return <button>button</button>
+interface Props {
+  onClick?: () => void
+  children?: ReactNode
+}
+
+const Button: FunctionComponent = ({ onClick, children }: Props) => {
+  return (
+    <button className={styles.button} onClick={onClick}>
+      {children}
+    </button>
+  )
 }
 
 export default Button

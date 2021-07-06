@@ -4,7 +4,14 @@ import Button from '@/components/Button'
 const App: FunctionComponent = () => {
   return (
     <div>
-      react typescript webpack ! <Button />
+      <h2> react typescript webpack !</h2>
+
+      <Button
+        onClick={() => {
+          console.log('ddd')
+        }}>
+        test
+      </Button>
     </div>
   )
 }
