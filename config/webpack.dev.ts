@@ -3,13 +3,13 @@ import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-serv
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import commonConfig from './webpack.common'
 import path from 'path'
+import merge from 'webpack-merge'
 
 interface Configuration extends WebpackConfiguration {
   devServer?: WebpackDevServerConfiguration
 }
 
 const config: Configuration = {
-  ...commonConfig,
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
@@ -30,15 +30,15 @@ const config: Configuration = {
       chunks: ['index']
     }),
     new HotModuleReplacementPlugin()
-  ]
-  // module: {
-  //   rules: [
-  //     {
-  //       test: /\.s[ac]ss$/,
-  //       use: ['style-loader', 'css-loader', 'sass-loader']
-  //     }
-  //   ]
-  // }
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.s[ac]ss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      }
+    ]
+  }
 }
 
-export default config
+export default merge(commonConfig, config)

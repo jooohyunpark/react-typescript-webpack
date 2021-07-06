@@ -4,9 +4,9 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import commonConfig from './webpack.common'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import merge from 'webpack-merge'
 
 const config: Configuration = {
-  ...commonConfig,
   mode: 'production',
   entry: './src/index.tsx',
   output: {
@@ -26,4 +26,4 @@ const config: Configuration = {
   ]
 }
 
-export default config
+export default merge(commonConfig, config)
