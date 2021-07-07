@@ -6,6 +6,6 @@ export const arr = (val: number): (string | number)[] => {
   return [val, val]
 }
 
-// export const obj = (val: number): object => {
-//   return { test: val }
-// }
+export const obj = (val: number): Record<string, unknown> => {
+  return { test: val }
+}
