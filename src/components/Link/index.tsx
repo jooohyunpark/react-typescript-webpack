@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, FunctionComponent } from 'react'
 
 interface Props {
   href?: string
@@ -6,7 +6,8 @@ interface Props {
   children?: ReactNode
 }
 
-const Link = ({ href, text }: Props) => {
+// const Link = ({ href, text }: Props) => {
+const Link: FunctionComponent<Props> = ({ href, text }) => {
   return <a href={href}>{text}</a>
 }
 
