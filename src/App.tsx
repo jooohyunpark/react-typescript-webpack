@@ -5,7 +5,7 @@ import Link from '@/components/Link'
 
 const App: FunctionComponent = () => {
   return (
-    <div className={styles.test}>
+    <div>
       <h2> react typescript webpack !</h2>
 
       <Button
