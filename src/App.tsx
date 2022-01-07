@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react'
 import '@/styles/main.scss'
-import styles from '@/styles/test.module.scss'
 import Button from '@/components/Button'
 import Link from '@/components/Link'
 
