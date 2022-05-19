@@ -1,4 +1,4 @@
-# react-typescript-webpack
+# react-typescript-webpack-boilerplate
 
 Webpack boilerplate for a React TypeScript. Dependencies below.
 
